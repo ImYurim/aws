@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{%extends 'base.html'%}
+
+{% block contents %}
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                {%for blog in blogs.all%}
+                <h5 class="card-title">{{blog.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
+                <p class="card-text">{{blog.summary}}<a href="{%url 'detail' blog.id%}">...more</a></p>
+                {%endfor%}
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+{%endblock%}
+
+</html>
